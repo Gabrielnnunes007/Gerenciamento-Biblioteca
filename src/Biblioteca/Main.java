@@ -75,7 +75,37 @@ public class Main {
                                     break;
                                 case 2:
                                     System.out.println("===== EDITAR LIVRO =====");
+                                    int editarLivro = 0;
+                                    while (editarLivro != 8) {
+                                        sistema.menuEditarLivro();
+                                        editarLivro = scanner.nextInt();
+                                        
+                                        switch (editarLivro) {
+                                            case 1:
+                                                System.out.println("Digite o número do ISBN do livro: ");
+                                                int pesquisaISBN = scanner.nextInt();
+                                                estoque.atualizarTitulo(pesquisaISBN);
+                                                break;
+                                            case 2:
+                                                break;
+                                            case 3:
+                                                break;
+                                            case 4:
+                                                break;
+                                            case 5:
+                                                break;
+                                            case 6:
+                                                break;
+                                            case 7:
+                                                break;
+                                            case 8:
+                                                System.out.println("RETORNANDO...");
+                                                break;
+                                        }
+                                    }
                                     break;
+
+
                                 case 3:
                                     System.out.println("===== REMOVER LIVRO =====");
                                     break;

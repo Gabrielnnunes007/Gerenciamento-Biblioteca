@@ -31,6 +31,7 @@ public class Sistema {
     public void menuEstoque() {
         System.out.println("------ MENU ESTOQUE ------");
         System.out.println("Selecione a opção desejada: ");
+        System.out.println("teste");
     }
     public void menuEmpretimo() {
         System.out.println("------ MENU EMPRESTIMO -------");

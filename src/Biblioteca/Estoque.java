@@ -1,8 +1,11 @@
 package Biblioteca;
 
 import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.stream.StreamSupport;
 
 public class Estoque {
+    Scanner scanner = new Scanner(System.in);
     private ArrayList<Livro> livros;
 
     public Estoque(){
@@ -21,6 +24,7 @@ public class Estoque {
         livros.add(livro);
         System.out.println("Livro " + livro.getTitulo() + " foi adicionado com sucesso");
     }
+
     public void removerLivro(int isbn) {
         for (int i =0; i < livros.size();i++) {
             if (livros.get(i).getIsbn() == isbn) {
@@ -29,6 +33,24 @@ public class Estoque {
             }
         }
     }
+
+    public void atualizarTitulo(int isbn) {
+        for (int i=0; i < livros.size();i++) {
+            if (livros.get(i).getIsbn() == isbn) {
+                System.out.println("Livro encontrado: " + livros.get(i).getTitulo());
+
+                System.out.println("Digite o novo Titulo do Livro: ");
+                String novoTitulo = scanner.next();
+                livros.get(i).setTitulo(novoTitulo);
+                System.out.println("Titulo Alterado com sucesso!!");
+            } else {
+                System.out.println("Não existe livro com esse ISBN");
+            }
+        }
+
+    }
+
+
     public void listarLivros() {
         for(Livro livro : livros) {
             System.out.println("Título: " + livro.getTitulo());

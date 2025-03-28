@@ -33,6 +33,36 @@ public class Estoque {
         }
     }
 
+    public void editarLivro(Livro livro) {
+        switch (campo.toLowerCase()) {
+            case "titulo":
+                livro.setTitulo();
+                break;
+            case "autor":
+                livro.setAutor();
+                break;
+            case "isbn":
+                livro.setIsbn();
+                break;
+            case "editora":
+                livro.setEditora();
+                break;
+            case "gênero":
+                livro.setGenero();
+                break;
+            case "páginas":
+                livro.setNumero_paginas(Integer.parseInt());
+                break;
+            case "quantidade":
+                livro.setQuantidade(Integer.parseInt());
+                break;
+            default:
+                System.out.println("Campo inválido!");
+        }
+    }
+
+
+
     public void listarLivros() {
         for(Livro livro : livros) {
             System.out.println("Título: " + livro.getTitulo());

@@ -70,30 +70,11 @@ public class Main {
                                             scanner.nextLine();
                                         }
                                     }
-
                                     estoque.adicionarLivro(livro);
                                     break;
                                 case 2:
-                                    int menuEditar = 0;
-                                    while(menuEditar != 2) {
-                                        menuEditar = scanner.nextInt();
-                                        switch (menuEditar) {
-                                            case 1:
-                                                System.out.println("===== EDITAR LIVRO =====");
-                                                System.out.println("Digite o ISBN do livro que voce encontrar para alterar: ");
-                                                int isbnprocurado = scanner.nextInt();
-                                                estoque.encontrarLivro(isbnprocurado);
-                                                break;
-                                            case 2:
-                                                System.out.println("Digite o ISBN do livro que voce quer alterar: ");
-                                                isbnprocurado = scanner.nextInt();
-                                                System.out.println("Digite o campo de alteração: ");
-                                                String campoDesejado = scanner.next();
-                                                estoque.atualizarCampo(isbnprocurado, campoDesejado);
-                                        }
-                                    }
+                                    System.out.println("===== EDITAR LIVRO =====");
                                     break;
-
                                 case 3:
                                     System.out.println("===== REMOVER LIVRO =====");
                                     break;

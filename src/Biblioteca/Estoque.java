@@ -7,10 +7,11 @@ import java.util.Scanner;
 public class Estoque {
     Scanner scanner = new Scanner(System.in);
     private ArrayList<Livro> livros;
+    private ArrayList<Pessoa> pessoas;
 
     public Estoque(){
         this.livros = new ArrayList<>();
-
+        this.pessoas = new ArrayList<>();
     }
     public void adicionarLivro(Livro livro) {
         for (Livro l : livros) {
@@ -133,6 +134,11 @@ public class Estoque {
             System.out.println("Quantidade: " + livro.getQuantidade());
             System.out.println("-----------------------------");
         }
+    }
+
+    public void adicionarPessoa(Pessoa pessoa){
+        pessoas.add(pessoa);
+        System.out.println("Usuário: " + pessoa.getNome() + " foi cadastrada com sucesso!");
     }
 
 }

@@ -1,6 +1,6 @@
 package Biblioteca;
 
-public class Sistema {
+public class Menu {
     public void menuPrincipal() {
         System.out.println("-----  Sistema de Gerenciamento da Biblioteca -----");
         System.out.println("Selecione a opção desejada: ");
@@ -20,13 +20,13 @@ public class Sistema {
         System.out.println("5 - Retornar ao Menu principal\n");
     }
 
-    public void menuUsuario() {
-        System.out.println("------ MENU USUARIO ------");
+    public void menuPessoa() {
+        System.out.println("------ MENU PESSOA ------");
         System.out.println("Selecione a opção desejada: ");
-        System.out.println("1 - Cadastrar Usuário");
-        System.out.println("2 - Editar Usuário");
-        System.out.println("3 - Remover Usuário");
-        System.out.println("4 - Listar Usuários");
+        System.out.println("1 - Cadastrar Pessoa");
+        System.out.println("2 - Editar Pessoa");
+        System.out.println("3 - Remover Pessoa");
+        System.out.println("4 - Listar Pessoas");
         System.out.println("5 - Retornar ao Menu principal\n");
     }
     public void menuEstoque() {

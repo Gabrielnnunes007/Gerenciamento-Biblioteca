@@ -4,19 +4,19 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        Sistema sistema = new Sistema();
+        Menu menu = new Menu();
         Estoque estoque = new Estoque();
         Scanner scanner = new Scanner(System.in);
             int menuPrincial = 0;
             while (menuPrincial != 5){
-                sistema.menuPrincipal();
+                menu.menuPrincipal();
                 menuPrincial = scanner.nextInt();
 
                 switch (menuPrincial) {
                     case 1:
                         int opcaoLivro = 0;
                         while (opcaoLivro != 5) {
-                            sistema.menuLivro();
+                            menu.menuLivro();
                             opcaoLivro = scanner.nextInt();
 
                             switch (opcaoLivro) {
@@ -104,15 +104,49 @@ public class Main {
                         break;
 
                     case 2:
-                        sistema.menuUsuario();
+                        menu.menuPessoa();
+                        int opcaoPessoa = 0;
+                        while (opcaoPessoa != 5) {
+                            menu.menuPessoa();
+                            opcaoPessoa = scanner.nextInt();
+
+                            switch (opcaoPessoa) {
+                                case 1:
+                                    Pessoa pessoa = new Pessoa();
+                                    System.out.println("Digite o nome da pessoa: ");
+                                    pessoa.setNome(scanner.nextLine());
+
+                                    while (true) {
+                                        try {
+                                            System.out.println("Digite a idade da pessoa: ");
+                                            pessoa.setIdade(scanner.nextInt());
+                                            scanner.nextLine();
+                                            break;
+                                        } catch (InputMismatchException e) {
+                                            System.out.println("Número Inválido. Tente somente numeros inteiros: ");
+                                            scanner.nextLine();
+                                        }
+                                    }
+                                case 2:
+                                    break;
+                                case 3:
+                                    break;
+                                case 4:
+                                    break;
+                                case 5:
+                                    break;
+                                default:
+                                    System.out.println("Opção Inválida. Tente novamente: ");
+                            }
+                        }
                         break;
 
                     case 3:
-                        sistema.menuEstoque();
+                        menu.menuEstoque();
                         break;
 
                     case 4:
-                        sistema.menuEmpretimo();
+                        menu.menuEmpretimo();
                         break;
 
                     case 5:

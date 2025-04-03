@@ -138,7 +138,18 @@ public class Estoque {
 
     public void adicionarPessoa(Pessoa pessoa){
         pessoas.add(pessoa);
-        System.out.println("Usuário: " + pessoa.getNome() + " foi cadastrada com sucesso!");
+        System.out.println("Pessoa: " + pessoa.getNome() + " foi cadastrada com sucesso!");
+    }
+    public void listarPessoas() {
+        for (int i =0; i < pessoas.size();i++) {
+            Pessoa pessoa = pessoas.get(i);
+            System.out.println("Índice: " + i);
+            System.out.println("Código: " + pessoa.getCodigo());
+            System.out.println("Nome: " + pessoa.getNome());
+            System.out.println("Idade: " + pessoa.getIdade());
+            System.out.println("-----------------------------");
+
+        }
     }
 
 }

@@ -114,7 +114,7 @@ public class Main {
                                 case 1:
                                     Pessoa pessoa = new Pessoa();
                                     System.out.println("Digite o nome da pessoa: ");
-                                    pessoa.setNome(scanner.nextLine());
+                                    pessoa.setNome(scanner.next().toUpperCase());
 
                                     while (true) {
                                         try {
@@ -127,8 +127,11 @@ public class Main {
                                             scanner.nextLine();
                                         }
                                     }
-                                case 2:
+                                    estoque.adicionarPessoa(pessoa);
                                     break;
+                                case 2:
+                                    estoque.listarPessoas();
+                                    System.out.println("Digite");
                                 case 3:
                                     break;
                                 case 4:

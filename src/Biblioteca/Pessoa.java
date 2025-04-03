@@ -3,6 +3,7 @@ package Biblioteca;
 public class Pessoa {
     private String nome;
     private int idade;
+    private int codigo;
 
     public Pessoa() {
 
@@ -10,6 +11,7 @@ public class Pessoa {
     public Pessoa (String nome, int idade) {
         this.setNome(nome);
         this.setIdade(idade);
+        this.setCodigo(this.getCodigo() + 1);
     }
 
     public String getNome() {
@@ -26,5 +28,13 @@ public class Pessoa {
 
     public void setIdade(int idade) {
         this.idade = idade;
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
 }

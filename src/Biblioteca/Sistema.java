@@ -19,17 +19,7 @@ public class Sistema {
         System.out.println("4 - Listar Livros");
         System.out.println("5 - Retornar ao Menu principal\n");
     }
-    public void menuEditarLivro() {
-        System.out.println("1 - Editar Título");
-        System.out.println("2 - Editar Autor");
-        System.out.println("3 - Editar ISBN");
-        System.out.println("4 - Editar Editora");
-        System.out.println("5 - Editar Gênero");
-        System.out.println("6 - Editar Número de páginas");
-        System.out.println("7 - Editar Quantidade");
-        System.out.println("8 - Retornar");
 
-    }
     public void menuUsuario() {
         System.out.println("------ MENU USUARIO ------");
         System.out.println("Selecione a opção desejada: ");

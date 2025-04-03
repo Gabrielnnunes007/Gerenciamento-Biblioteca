@@ -26,10 +26,10 @@ public class Main {
 
                                     System.out.println("Digite o Titulo do Livro: ");
                                     scanner.nextLine();
-                                    livro.setTitulo(scanner.nextLine());
+                                    livro.setTitulo(scanner.nextLine().toUpperCase());
 
                                     System.out.println("Digite o Autor do Livro: ");
-                                    livro.setAutor(scanner.nextLine());
+                                    livro.setAutor(scanner.nextLine().toUpperCase());
 
                                     while(true) {
                                         try {
@@ -44,10 +44,10 @@ public class Main {
 
                                     System.out.println("Digite a Editora do Livro: ");
                                     scanner.nextLine();
-                                    livro.setEditora(scanner.nextLine());
+                                    livro.setEditora(scanner.nextLine().toUpperCase());
 
                                     System.out.println("Digite o Gênero do Livro: ");
-                                    livro.setGenero(scanner.nextLine());
+                                    livro.setGenero(scanner.nextLine().toUpperCase());
 
                                     while(true) {
                                         try {
@@ -74,9 +74,21 @@ public class Main {
                                     break;
                                 case 2:
                                     System.out.println("===== EDITAR LIVRO =====");
+                                    estoque.menuEditarLivro();
                                     break;
                                 case 3:
                                     System.out.println("===== REMOVER LIVRO =====");
+                                    while(true) {
+                                        try {
+                                            System.out.println("Digite o ISBN do Livro: ");
+                                            int livroDesejado = scanner.nextInt();
+                                            estoque.removerLivro(livroDesejado);
+                                            break;
+                                        } catch (InputMismatchException e) {
+                                            System.out.println("Número Inválido. Tente somente numeros inteiros: ");
+                                            scanner.nextLine();
+                                        }
+                                    }
                                     break;
                                 case 4:
                                     System.out.println("===== LISTAR LIVRO =====");

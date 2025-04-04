@@ -1,17 +1,18 @@
 package Biblioteca;
 
 public class Pessoa {
+    private static int contador = 1;
     private String nome;
     private int idade;
     private int codigo;
 
     public Pessoa() {
-
+        this.setCodigo(contador++);
     }
     public Pessoa (String nome, int idade) {
         this.setNome(nome);
         this.setIdade(idade);
-        this.setCodigo(this.getCodigo() + 1);
+        this.setCodigo(contador++);
     }
 
     public String getNome() {

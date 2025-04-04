@@ -43,8 +43,7 @@ public class Estoque {
         return null;
     }
 
-    public void menuEditarLivro() {
-        Scanner scanner = new Scanner(System.in);
+    public void editarLivro() {
         int isbn;
         while (true) {
             try {
@@ -140,6 +139,7 @@ public class Estoque {
         pessoas.add(pessoa);
         System.out.println("Pessoa: " + pessoa.getNome() + " foi cadastrada com sucesso!");
     }
+
     public void listarPessoas() {
         for (int i =0; i < pessoas.size();i++) {
             Pessoa pessoa = pessoas.get(i);
@@ -152,4 +152,84 @@ public class Estoque {
         }
     }
 
+    public Pessoa buscarPessoaPorCodigo(int codigo) {
+        for (Pessoa pessoa : pessoas) {
+            if (pessoa.getCodigo() == codigo) {
+                return pessoa;
+            }
+        }
+        return null;
+    }
+
+    public void editarPessoa() {
+        int codigo;
+        while (true) {
+            try {
+                System.out.println("Digite o CÓDIGO da pessoa que deseja editar: ");
+                codigo = scanner.nextInt();
+                scanner.nextLine();
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Erro: CÓDIGO inválido! Digite apenas números inteiros.");
+                scanner.nextLine();
+            }
+        }
+        Pessoa pessoa = buscarPessoaPorCodigo(codigo);
+
+        if (pessoa == null) {
+            System.out.println("Pessoa não encontrada.");
+            return;
+        }
+    int opcao;
+        do {
+            System.out.println("1 - Editar Nome: ");
+            System.out.println("2 - Editar Idade: ");
+            System.out.println("3 - Retornar: ");
+
+            opcao = scanner.nextInt();
+            scanner.nextLine();
+            switch (opcao) {
+                case 1:
+                    System.out.println("Novo nome: ");
+                    pessoa.setNome(scanner.nextLine());
+                    break;
+                case 2:
+                    System.out.println("Nova idade:");
+                    pessoa.setIdade(scanner.nextInt());
+                    scanner.nextLine();
+                    break;
+                case 3:
+                    System.out.println("Retornando");
+            }
+        } while (opcao != 3);
+    }
+
+    public void removerPessoa() {
+        int codigo;
+        while (true) {
+            try {
+                System.out.println("Digite o CÓDIGO da pessoa que deseja editar: ");
+                codigo = scanner.nextInt();
+                scanner.nextLine();
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Erro: CÓDIGO inválido! Digite apenas números inteiros.");
+                scanner.nextLine();
+            }
+        }
+        Pessoa pessoa = buscarPessoaPorCodigo(codigo);
+
+        if (pessoa == null) {
+            System.out.println("Pessoa não encontrada.");
+            return;
+        }
+        for (int i=0; i < pessoas.size();i++) {
+            if (pessoas.get(i).getCodigo() == codigo) {
+                pessoas.remove(i);
+
+            }
+            System.out.println("Pessoa: " + pessoas.get(i).getNome() + " foi excluída com sucesso");
+        }
+
+    }
 }

@@ -5,7 +5,7 @@ public class Menu {
         System.out.println("-----  Sistema de Gerenciamento da Biblioteca -----");
         System.out.println("Selecione a opção desejada: ");
         System.out.println("1 - LIVRO");
-        System.out.println("2 - USUÁRIO");
+        System.out.println("2 - PESSOA");
         System.out.println("3 - ESTOQUE");
         System.out.println("4 - EMPRESTIMOS");
         System.out.println("5 - ENCERRAR\n");

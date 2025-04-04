@@ -74,7 +74,7 @@ public class Main {
                                     break;
                                 case 2:
                                     System.out.println("===== EDITAR LIVRO =====");
-                                    estoque.menuEditarLivro();
+                                    estoque.editarLivro();
                                     break;
                                 case 3:
                                     System.out.println("===== REMOVER LIVRO =====");
@@ -104,17 +104,17 @@ public class Main {
                         break;
 
                     case 2:
-                        menu.menuPessoa();
                         int opcaoPessoa = 0;
                         while (opcaoPessoa != 5) {
                             menu.menuPessoa();
                             opcaoPessoa = scanner.nextInt();
+                            scanner.nextLine();
 
                             switch (opcaoPessoa) {
                                 case 1:
                                     Pessoa pessoa = new Pessoa();
                                     System.out.println("Digite o nome da pessoa: ");
-                                    pessoa.setNome(scanner.next().toUpperCase());
+                                    pessoa.setNome(scanner.nextLine().toUpperCase());
 
                                     while (true) {
                                         try {
@@ -130,13 +130,15 @@ public class Main {
                                     estoque.adicionarPessoa(pessoa);
                                     break;
                                 case 2:
-                                    estoque.listarPessoas();
-                                    System.out.println("Digite");
+                                    estoque.editarPessoa();
                                 case 3:
+                                    estoque.removerPessoa();
                                     break;
                                 case 4:
+                                    estoque.listarPessoas();
                                     break;
                                 case 5:
+                                    System.out.println("Retornando");
                                     break;
                                 default:
                                     System.out.println("Opção Inválida. Tente novamente: ");

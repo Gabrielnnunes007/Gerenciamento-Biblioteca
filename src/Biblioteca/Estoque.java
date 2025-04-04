@@ -26,7 +26,26 @@ public class Estoque {
         System.out.println("Livro " + livro.getTitulo() + " foi adicionado com sucesso");
     }
 
-    public void removerLivro(int isbn) {
+    public void removerLivro() {
+        int isbn;
+        while (true) {
+            try {
+                System.out.println("Digite o ISBN do livro que deseja editar: ");
+                isbn = scanner.nextInt();
+                scanner.nextLine();
+                break;
+            } catch (InputMismatchException e) {
+                System.out.println("Erro: ISBN inválido! Digite apenas números inteiros.");
+                scanner.nextLine();
+            }
+        }
+        Livro livro = buscarLivroPorISBN(isbn);
+
+        if (livro == null) {
+            System.out.println("Livro não encontrado.");
+            return;
+        }
+
         for (int i=0; i < livros.size();i++) {
             if (livros.get(i).getIsbn() == isbn) {
                 System.out.println("Livro : " + livros.get(i).getTitulo() + " foi removido com sucesso");
@@ -184,7 +203,7 @@ public class Estoque {
         do {
             System.out.println("1 - Editar Nome: ");
             System.out.println("2 - Editar Idade: ");
-            System.out.println("3 - Retornar: ");
+            System.out.println("3 - Retornar ");
 
             opcao = scanner.nextInt();
             scanner.nextLine();

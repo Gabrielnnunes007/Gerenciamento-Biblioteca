@@ -15,7 +15,7 @@ public class Main {
                 switch (menuPrincial) {
                     case 1:
                         int opcaoLivro = 0;
-                        while (opcaoLivro != 5) {
+                        while (opcaoLivro != 4) {
                             menu.menuLivro();
                             opcaoLivro = scanner.nextInt();
 
@@ -80,9 +80,7 @@ public class Main {
                                     System.out.println("===== REMOVER LIVRO =====");
                                     while(true) {
                                         try {
-                                            System.out.println("Digite o ISBN do Livro: ");
-                                            int livroDesejado = scanner.nextInt();
-                                            estoque.removerLivro(livroDesejado);
+                                            estoque.removerLivro();
                                             break;
                                         } catch (InputMismatchException e) {
                                             System.out.println("Número Inválido. Tente somente numeros inteiros: ");
@@ -145,16 +143,30 @@ public class Main {
                             }
                         }
                         break;
-
                     case 3:
-                        menu.menuEstoque();
-                        break;
+                        int opcao;
+                        do {
+                            menu.menuEmpretimo();
+                            opcao = scanner.nextInt();
+                            scanner.nextLine();
 
+                            switch (opcao) {
+                                case 1:
+                                    break;
+                                case 2:
+                                    break;
+                                case 3:
+                                    break;
+                                case 4:
+                                    break;
+                                case 5:
+                                    System.out.println("Retornando");
+                                    break;
+                            }
+
+                        }while (opcao != 5);
+                        break;
                     case 4:
-                        menu.menuEmpretimo();
-                        break;
-
-                    case 5:
                         System.out.println("Deseja mesmo sair: ");
                         System.out.println("1 - SIM ");
                         System.out.println("2 - NÃO ");

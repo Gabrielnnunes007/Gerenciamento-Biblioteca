@@ -6,9 +6,8 @@ public class Menu {
         System.out.println("Selecione a opção desejada: ");
         System.out.println("1 - LIVRO");
         System.out.println("2 - PESSOA");
-        System.out.println("3 - ESTOQUE");
-        System.out.println("4 - EMPRESTIMOS");
-        System.out.println("5 - ENCERRAR\n");
+        System.out.println("3 - EMPRESTIMOS");
+        System.out.println("4 - ENCERRAR\n");
     }
     public void menuLivro() {
         System.out.println("------ MENU LIVRO -------");
@@ -29,12 +28,14 @@ public class Menu {
         System.out.println("4 - Listar Pessoas");
         System.out.println("5 - Retornar ao Menu principal\n");
     }
-    public void menuEstoque() {
-        System.out.println("------ MENU ESTOQUE ------");
-        System.out.println("Selecione a opção desejada: ");
-    }
+
     public void menuEmpretimo() {
         System.out.println("------ MENU EMPRESTIMO -------");
         System.out.println("Selecione a opção desejada: ");
+        System.out.println("1 - Exbir todos os Empréstimos");
+        System.out.println("2 - Editar Empréstimos");
+        System.out.println("3 - Adicionar Empréstimo");
+        System.out.println("4 - Remover Empréstimo");
+        System.out.println("5 - Retornar ao Menu principal\n");
     }
 }

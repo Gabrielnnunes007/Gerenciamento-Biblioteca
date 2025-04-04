@@ -6,8 +6,8 @@ import java.util.Scanner;
 
 public class Estoque {
     Scanner scanner = new Scanner(System.in);
-    private ArrayList<Livro> livros;
-    private ArrayList<Pessoa> pessoas;
+    private final ArrayList<Livro> livros;
+    private final ArrayList<Pessoa> pessoas;
 
     public Estoque(){
         this.livros = new ArrayList<>();

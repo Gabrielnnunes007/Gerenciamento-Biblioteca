@@ -59,6 +59,7 @@ public class Estoque {
                 return livro;
             }
         }
+        System.out.println("Livro não encontrado.");
         return null;
     }
 
@@ -177,6 +178,7 @@ public class Estoque {
                 return pessoa;
             }
         }
+        System.out.println("Pessoa não encontrada.");
         return null;
     }
 
@@ -199,7 +201,7 @@ public class Estoque {
             System.out.println("Pessoa não encontrada.");
             return;
         }
-    int opcao;
+        int opcao;
         do {
             System.out.println("1 - Editar Nome: ");
             System.out.println("2 - Editar Idade: ");
@@ -219,6 +221,7 @@ public class Estoque {
                     break;
                 case 3:
                     System.out.println("Retornando");
+                    break;
             }
         } while (opcao != 3);
     }

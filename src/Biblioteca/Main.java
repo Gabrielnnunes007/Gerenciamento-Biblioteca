@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Menu menu = new Menu();
+        Emprestimo emprestimo = new Emprestimo();
         Estoque estoque = new Estoque();
         Scanner scanner = new Scanner(System.in);
             int menuPrincial = 0;
@@ -15,7 +16,7 @@ public class Main {
                 switch (menuPrincial) {
                     case 1:
                         int opcaoLivro = 0;
-                        while (opcaoLivro != 4) {
+                        while (opcaoLivro != 5) {
                             menu.menuLivro();
                             opcaoLivro = scanner.nextInt();
 
@@ -59,7 +60,6 @@ public class Main {
                                             scanner.nextLine();
                                         }
                                     }
-
                                     while(true) {
                                         try {
                                             System.out.println("Digite a Quantidade do Livro: ");
@@ -70,6 +70,7 @@ public class Main {
                                             scanner.nextLine();
                                         }
                                     }
+
                                     estoque.adicionarLivro(livro);
                                     break;
                                 case 2:
@@ -129,6 +130,7 @@ public class Main {
                                     break;
                                 case 2:
                                     estoque.editarPessoa();
+                                    break;
                                 case 3:
                                     estoque.removerPessoa();
                                     break;
@@ -152,10 +154,34 @@ public class Main {
 
                             switch (opcao) {
                                 case 1:
+                                    emprestimo.listarEmprestimos();
                                     break;
                                 case 2:
                                     break;
                                 case 3:
+                                    System.out.println("Digite o codigo da pessoa para empréstimo: ");
+                                    int codigoEmprestimo = scanner.nextInt();
+                                    scanner.nextLine();
+
+                                    if (estoque.buscarPessoaPorCodigo(codigoEmprestimo) == null) {
+                                        System.out.println("Não foi possivel realizar o emprestimo 1");
+                                        break;
+                                    } else {
+                                        System.out.println("Pessoa: " + estoque.buscarPessoaPorCodigo(codigoEmprestimo).getNome() );
+                                    }
+
+                                    System.out.println("Digite o codigo do livro para empréstimo: ");
+                                    int isbnEmprestimo = scanner.nextInt();
+                                    scanner.nextLine();
+
+                                    if (estoque.buscarLivroPorISBN(isbnEmprestimo) == null) {
+                                        System.out.println("Não foi possivel realizar o empréstimo 2");
+                                        break;
+                                    } else {
+                                        System.out.println("Livro: " + estoque.buscarLivroPorISBN(isbnEmprestimo).getTitulo());
+                                    }
+
+                                    emprestimo.adicionarEmprestimo(estoque.buscarPessoaPorCodigo(codigoEmprestimo),estoque.buscarLivroPorISBN(isbnEmprestimo));
                                     break;
                                 case 4:
                                     break;
